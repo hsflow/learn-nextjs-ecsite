@@ -1,0 +1,23 @@
+services:
+  nextjs:
+    build:
+      dockerfile: ./Dockerfile
+    container_name: nextjs-ecsite
+    volumes:
+      - ./:/app
+      - ~/.gitconfig:${APP_ROOT}/.gitconfig
+    ports:
+      - 3001:3001
+
+#   database:
+#     image: mysql:8.3.0
+#     container_name: database
+#     environment:
+#       MYSQL_ROOT_PASSWORD: juj87j&@jusdfus.2@@d
+#       MYSQL_USER: webteko_hide
+#       MYSQL_PASSWORD: fjiF*jdkiS#@#jidFSDF
+#       MYSQL_DATABASE: takematsu_writing
+
+networks:
+  default:
+    name: nextjs-test-network
